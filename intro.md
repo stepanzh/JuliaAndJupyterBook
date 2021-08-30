@@ -1,16 +1,10 @@
-# Welcome to your Jupyter Book
+# Гайд по Jupyter Book
 
-This is a small sample book to give you a feel for how book content is
-structured.
+[![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)
 
-:::{note}
-Here is a note!
-:::
 
-And here is a code block:
+Ориентирован на использование языка Julia.
 
-```
-e = mc^2
-```
+## Список полезных ссылок
 
-Check out the content pages bundled with this sample book to see more.
+- [MyST cheat sheet](https://jupyterbook.org/reference/cheatsheet.html)
