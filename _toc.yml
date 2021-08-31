@@ -5,3 +5,4 @@ format: jb-book
 root: intro
 chapters:
   - file: julia_code
+  - file: faq
