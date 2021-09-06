@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оформление кода Julia &#8212; Jupyter Book и Julia</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Грабли (не наступи на)" href="faq.html" />
+    <link rel="prev" title="Jupyter Book и Julia" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Book и Julia</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Jupyter Book
+   <img src="https://raw.githubusercontent.com/executablebooks/jupyter-book/master/docs/images/logo-square.svg" style="height: 1em;"/>
+   и
+   <img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-dots.svg" style="height: 1em;"/>
+   Julia
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Оформление кода Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   Грабли (не наступи на)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/julia_code.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/julia_code.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/stepanzh/MyNewBook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/stepanzh/MyNewBook/issues/new?title=Issue%20on%20page%20%2Fjulia_code.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/stepanzh/MyNewBook/master?urlpath=tree/docs/julia_code.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Добавление примеров кода
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jl">
+     Имитирование куска кода в исходном
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .jl
+      </span>
+     </code>
+     файле
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#julia-repl">
+     Имитирование сессии в julia REPL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Добавление исполняемого кода
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Активация возможности исполнять код
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Собственно, добавление кода
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="julia">
+<h1>Оформление кода Julia<a class="headerlink" href="#julia" title="Permalink to this headline">¶</a></h1>
+<p>Здесь изложены примеры по оформлению кода в MyST формате (потому что я не люблю ноутбуки).</p>
+<p>Всякие подробности здесь <a class="reference external" href="https://jupyterbook.org/content/executable/index.html">Write executable content</a>.</p>
+<div class="section" id="id1">
+<h2>Добавление примеров кода<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Код добавляется стандартным для Markdown синтаксисом</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```julia
+# тут код
+```
+</pre></div>
+</div>
+<div class="section" id="jl">
+<h3>Имитирование куска кода в исходном <code class="docutils literal notranslate"><span class="pre">.jl</span></code> файле<a class="headerlink" href="#jl" title="Permalink to this headline">¶</a></h3>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Результат</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">foo</span><span class="p">(</span><span class="n">bar</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span>
+    <span class="n">dump</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">nothing</span>
+<span class="k">end</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Исходный код</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```julia
+function foo(bar::Real)
+    dump(bar)
+    return nothing
+end
+foo(5)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="julia-repl">
+<h3>Имитирование сессии в julia REPL<a class="headerlink" href="#julia-repl" title="Permalink to this headline">¶</a></h3>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Результат</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-julia-repl notranslate"><div class="highlight"><pre><span></span><span class="gp">julia&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="n">x</span><span class="p">;</span>
+
+<span class="gp">julia&gt;</span> <span class="n">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Исходный код</p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```julia-repl
+julia&gt; foo = (x::Real) -&gt; 2x;
+
+julia&gt; foo(2)
+4
+```
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Достаточно просто набрать код в REPL и скопипастить.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">pkg&gt;</span></code> и <code class="docutils literal notranslate"><span class="pre">shell&gt;</span></code> режимы, похоже, не подсвечиваются в блоке <code class="docutils literal notranslate"><span class="pre">julia-repl</span></code> :с</p>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Добавление исполняемого кода<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Оформление исполняемого кода прямо в <code class="docutils literal notranslate"><span class="pre">.md</span></code> файле требует настройки.</p>
+<!--
+Суть её заключается в том, что Jupyter Book-у указывается
+
+- в каком формате исходный файл страницы книги
+- на каком языке записан исполняемый код
+- в каком формате отобразить результат исполнения
+-->
+<div class="section" id="id3">
+<h3>Активация возможности исполнять код<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Во-первых, необходимо в <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> указать, нужно ли исполнять код [<a class="reference external" href="https://jupyterbook.org/content/execute.html#trigger-notebook-execution">как?</a>].</p>
+<p>Необходимо добавить кусок конфигурации (yaml формат) в начало файла. Jupyter Book-у нужно знать, чем исполнять ячейки кода.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">jupytext</span><span class="p">:</span>
+  <span class="nt">formats</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">md:myst</span>
+  <span class="nt">text_representation</span><span class="p">:</span>
+    <span class="nt">extension</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.md</span>
+    <span class="nt">format_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myst</span>
+<span class="nt">kernelspec</span><span class="p">:</span>
+  <span class="nt">display_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Julia</span>
+  <span class="nt">language</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">julia</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">julia-1.5</span>
+<span class="nn">---</span>
+</pre></div>
+</div>
+<p>У меня при настройке возникла проблема только с <code class="docutils literal notranslate"><span class="pre">kernelspec</span> <span class="pre">-&gt;</span> <span class="pre">name</span></code>.
+Точное название узнал через команду</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">% </span>jupyter kernelspec list
+<span class="go">Available kernels:</span>
+<span class="go">  julia-1.5    /Users/stepanzh/Library/Jupyter/kernels/julia-1.5</span>
+<span class="go">  python3      /Users/stepanzh/Venv/jupyterbook/share/jupyter/kernels/python3</span>
+</pre></div>
+</div>
+<p>Для чего нужны остальные настройки, пока не знаю.</p>
+</div>
+<div class="section" id="id4">
+<h3>Собственно, добавление кода<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Необходима директива <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> или <code class="docutils literal notranslate"><span class="pre">{code-cell}</span> <span class="pre">julia-1.5</span></code> с явным указанием ядра-исполнителя-кода.</p>
+<p>Результат</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="n">x</span>
+<span class="k">end</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Исходный код</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
+function foo(x::Real)
+    return 2x
+end
+dump(foo(5))
+```
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Директива <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> не может быть помещена в другие. Пам-пам.</p>
+</div>
+<p>Возвращаемым значением можно крутеть-вертеть, скрывать, отображать после и так далее, [<a class="reference external" href="https://jupyterbook.org/content/executable/index.html">как?</a>].</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "julia-1.5"
+        },
+        kernelOptions: {
+            kernelName: "julia-1.5",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'julia-1.5'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Jupyter Book <img src="https://raw.githubusercontent.com/executablebooks/jupyter-book/master/docs/images/logo-square.svg" style="height: 1em;"> и <img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-dots.svg" style="height: 1em;"> Julia</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="faq.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Грабли (не наступи на)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Stepan Zakharov<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
